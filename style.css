@@ -1,0 +1,14 @@
+#gameboard {
+  border: 1px dashed;
+  margin: auto;
+  display: block;
+  position: fixed;
+  left: 30%;
+}
+
+#game{
+/*	background-color: blue;
+*/	position: fixed;
+	left: 30%;
+
+}
