@@ -2,20 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Game Time</title>
+	<title>Game Time</title>
+	<link rel="stylesheet" href="fix.css">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<canvas id='gameboard'
-		width='900'
-		height='750'>
-	</canvas>
+	<header>
+		<h1>Connect Four</h1>
+		<h5><strong>Rules:</strong>Kombucha flexitarian blog kickstarter squid art party meh, listicle seitan etsy skateboard church-key cred flannel. Polaroid biodiesel twee heirloom bespoke ennui meh franzen pop-up trust fund chia forage knausgaard air plant iPhone. Meditation tattooed banjo bitters air plant salvia hexagon. Asymmetrical church-key live-edge biodiesel, gastropub pickled offal williamsburg twee listicle. </h5>
+	</header>
+	<main>
+		<article>
+			<h2>Player 1</h2>
+		</article>
+		
+		<div class="game-wrapper">
+			<canvas id='gameboard'
+				width='900'
+				height='750'>
+			</canvas>
+		
+			<canvas id='game'
+				width='900'
+				height='750'>
+			</canvas>
+		</div>
 
-	<canvas id='game'
-		width='900'
-		height='750'>
-	</canvas>
-  
+		<article>
+			<h2>Player 2</h2>
+		</article>
+	</main>
   <script src="main.bundle.js"></script>
 </body>
 </html>
