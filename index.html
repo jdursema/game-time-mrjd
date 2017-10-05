@@ -10,14 +10,15 @@
 <body>
 	<header>
 		<h1>Connect Four</h1>
-		<h5><strong>Rules:</strong>Kombucha flexitarian blog kickstarter squid art party meh, listicle seitan etsy skateboard church-key cred flannel. Polaroid biodiesel twee heirloom bespoke ennui meh franzen pop-up trust fund chia forage knausgaard air plant iPhone. Meditation tattooed banjo bitters air plant salvia hexagon. Asymmetrical church-key live-edge biodiesel, gastropub pickled offal williamsburg twee listicle. </h5>
+		<h5 class="rules"><strong>Rules:</strong>Kombucha flexitarian blog kickstarter squid art party meh, listicle seitan etsy skateboard church-key cred flannel. Polaroid biodiesel twee heirloom bespoke ennui meh franzen pop-up trust fund chia forage knausgaard air plant iPhone. Meditation tattooed banjo bitters air plant salvia hexagon. Asymmetrical church-key live-edge biodiesel, gastropub pickled offal williamsburg twee listicle. </h5>
 	</header>
 	<main>
-		<article>
+		<article class="player p1">
 			<h2>Player 1</h2>
+			<h5>Number of Turns: <span class="turns-number">0</span></h5>
 		</article>
 		
-		<div class="game-wrapper">
+		<section class="game-wrapper">
 			<canvas id='gameboard'
 				width='900'
 				height='750'>
@@ -27,10 +28,11 @@
 				width='900'
 				height='750'>
 			</canvas>
-		</div>
+		</section>
 
-		<article>
+		<article class="player p2">
 			<h2>Player 2</h2>
+			<h5>Number of Turns: <span class="turns-number">0</span></h5>
 		</article>
 	</main>
   <script src="main.bundle.js"></script>
