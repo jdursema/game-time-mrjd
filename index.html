@@ -2,20 +2,39 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Game Time</title>
+	<title>Game Time</title>
+	<link rel="stylesheet" href="fix.css">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<canvas id='gameboard'
-		width='900'
-		height='750'>
-	</canvas>
+	<header>
+		<h1>Connect Four</h1>
+		<h5 class="rules"><strong>Rules:</strong>To win you must be the first player to get four of your colored checkers in a row either horizontally, vertically or diagonally. Select a column using the mouse or arrow key. Click the mouse or press the space bar or enter keys to drop your piece in the column.</h5>
+	</header>
+	<main>
+		<article class="player p1">
+			<h2>Player 1</h2>
+			<h5>Number of Turns: <span class="turns-number">0</span></h5>
+		</article>
+		
+		<section class="game-wrapper">
+			<canvas id='gameboard'
+				width='900'
+				height='750'>
+			</canvas>
+		
+			<canvas id='game'
+				width='900'
+				height='750'>
+			</canvas>
+		</section>
 
-	<canvas id='game'
-		width='900'
-		height='750'>
-	</canvas>
-  
+		<article class="player p2">
+			<h2>Player 2</h2>
+			<h5>Number of Turns: <span class="turns-number">0</span></h5>
+		</article>
+	</main>
   <script src="main.bundle.js"></script>
 </body>
 </html>
