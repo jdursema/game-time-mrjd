@@ -72,8 +72,8 @@ main {
 }
 
 #gameboard {
-/*  border: 1px dashed;
-*/  margin: auto;
+  border: 1px dashed;
+  margin: auto;
   display: block;
   position: absolute;
   top: 0;
