@@ -56,8 +56,8 @@ button {
   font: inherit;
   -webkit-font-smoothing: inherit;
   letter-spacing: inherit;
-  background: none;
-  cursor: pointer;
+/*  background: none;
+*/  cursor: pointer;
   overflow: visible;
 }
 ::-moz-focus-inner {
