@@ -109,3 +109,7 @@ button{
   align-content: center;
   justify-content: center;
 }
+
+@import url(
+  "https://fonts.googleapis.com/css?family=Montserrat:900|Open+Sans" rel="stylesheet"
+)
