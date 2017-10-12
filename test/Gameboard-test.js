@@ -3,7 +3,7 @@ const assert = chai.assert;
 const Gameboard = require('../lib/Gameboard.js');
 
 describe('Gameboard', () => {
-  let gameboard = new Gameboard();
+  let gameboard;
 
   beforeEach( () => {
     gameboard = new Gameboard(65, 75, 750, 650);
