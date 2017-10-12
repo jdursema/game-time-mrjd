@@ -38,32 +38,43 @@ describe('Game', () => {
   });
 
   it('should populate array with a game piece when the moveDown function is run', () =>{
-    game.moveDown({});
+    game.moveDown(game.gamePiece);
     assert.equal(game.gameArray[5][3], game.gamePiece);
   });
 
   it('should put one piece on top of another if the space is already occupied', () => {
-    game.moveDown({});
+    game.moveDown(game.gamePiece);
+    game.moveDown(game.gamePiece);
     assert.equal(game.gameArray[5][3], game.gamePiece);
-    game.moveDown({});
     assert.equal(game.gameArray[4][3], game.gamePiece);
+    assert.equal(game.gameArray[3][3], 0);
   });
 
-  it('should change players after a piece is dropped', () =>{
-    game.moveDown({});
+  it('should change players after a piece is dropped', () => {
+    game.moveDown(game.gamePiece);
+    game.changeGamePiecePlayer();
     assert.equal(game.gameArray[5][3].player, 1);
-    game.moveDown({});
+    game.moveDown(game.gamePiece);
     assert.equal(game.gameArray[4][3].player, 2);
-    // assert.equal(game.gamePiece.player, 1); 
-    // game.moveDown({}); 
-    // const lastPlayer = game.gameArray[5][3].player
-    // assert.equal(lastPlayer, 1);
-    // game.moveDown({});     
-    // assert.equal(game.gameArray[4][3].player, 2);
   });
 
-  it('should check for four in a row horizontally', () => {
-    //drop pieces into the game array to align four horizontally and test
-  });
+  it('should check for four of the same gamePieces in a row horizontally', () => {
+    assert.equal(game.gameWon, false);
+    // game.gameArray = [
+    //   [0, 0, 0, 0, 0, 0, 0],
+    //   [0, 0, 0, 0, 0, 0, 0],
+    //   [0, 0, 0, 0, 0, 0, 0],
+    //   [0, 0, 0, 0, 0, 0, 0],
+    //   [0, 0, 0, 0, 0, 0, 0],
+    //   [0, 0, game.gamePiece, game.gamePiece, game.gamePiece, game.gamePiece, 0]
+    //  ]
 
+    game.gameArray[5][0].player===1;
+    game.gameArray[5][1].player===1;
+    game.gameArray[5][2].player===1;
+    game.gameArray[5][3].player===1;
+
+    game.horizontalConnectFour(5, 0);
+    assert.equal(game.gameWon, true) 
+  });
 });
