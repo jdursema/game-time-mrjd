@@ -23,13 +23,9 @@ describe('Gamepice', () => {
   });
 
   it('should move right', () => {
-    //assert that it starts at default x
-    //call the function to move right
-    //assert that the x coordinate of the gamepiece is +100
     assert.equal(gamePiece.x, 440)
     gamePiece.moveGamePiece({}, 'right');
     assert.equal(gamePiece.x, 540)
-    //add additional function calls to ensure it stops at 740
   });
   
   it('should not move right if x coordinate is >= 740', () => {
