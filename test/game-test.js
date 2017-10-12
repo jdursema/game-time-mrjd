@@ -23,7 +23,7 @@ describe('Game', () => {
 
   it('should have an array',()=>{
     assert.isArray(game.gameArray, true)
-  })
+  });
 
   it('should start as an array with every index equal to zero', () => {
     assert.deepEqual(game.gameArray, [
@@ -34,23 +34,20 @@ describe('Game', () => {
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0]
      ]
-    )
-
-
-  })
+    );
+  });
 
   it('should populate array with a game piece when the moveDown function is run', () =>{
     game.moveDown({});
     assert.equal(game.gameArray[5][3], game.gamePiece);
-  })
+  });
 
   it('should put one piece on top of another if the space is already occupied', () => {
     game.moveDown({});
     assert.equal(game.gameArray[5][3], game.gamePiece);
     game.moveDown({});
     assert.equal(game.gameArray[4][3], game.gamePiece);
-
-  })
+  });
 
   it('should change players after a piece is dropped', () =>{
     game.moveDown({});
@@ -63,10 +60,10 @@ describe('Game', () => {
     // assert.equal(lastPlayer, 1);
     // game.moveDown({});     
     // assert.equal(game.gameArray[4][3].player, 2);
-  
-  })
+  });
 
+  it('should check for four in a row horizontally', () => {
+    //drop pieces into the game array to align four horizontally and test
+  });
 
 });
-// const lastPlayer = this.gameArray[5][0].player
-// assert.equal(lastPlayer, 1)
