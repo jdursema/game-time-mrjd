@@ -105,4 +105,85 @@ describe('Game', () => {
     game.forwardDiagonalConnectFour(5, 0);
     assert.equal(game.gameWon, true) 
   });
+
+  it('should check for four of the same gamePieces in a row diagonally up and to the left', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, game.gamePiece, 0, 0, 0, 0],
+      [0, 0, 0, game.gamePiece, 0, 0, 0],
+      [0, 0, 0, 0, game.gamePiece, 0, 0],
+      [0, 0, 0, 0, 0, game.gamePiece, 0]
+     ];
+     
+    game.backwardDiagonalConnectFour(2, 2);
+    assert.equal(game.gameWon, true) 
+  });
+
+  it('should check for five of the same gamePieces in a row horizontally', () => {
+    assert.equal(game.gameWon, false);
+    
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, game.gamePiece, game.gamePiece, game.gamePiece, game.gamePiece, 0, 0]
+     ]
+
+    game.horizontalConnectFive(5, 0);
+    assert.equal(game.gameWon, true) 
+  });
+
+  it('should check for five of the same gamePieces in a row vertically', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0]
+     ]
+
+    game.verticalConnectFive(1, 0);
+    assert.equal(game.gameWon, true) 
+  });
+
+  it('should check for five of the same gamePieces in a row diagonally up and to the right', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, game.gamePiece, 0, 0],
+      [0, 0, 0, game.gamePiece, 0, 0, 0],
+      [0, 0, game.gamePiece, 0, 0, 0, 0],
+      [0, game.gamePiece, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0]
+     ];
+     
+    game.forwardDiagonalConnectFive(5, 0);
+    assert.equal(game.gameWon, true) 
+  });
+
+  it('should check for five of the same gamePieces in a row diagonally down and to the right', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, game.gamePiece, 0, 0, 0, 0, 0],
+      [0, 0, game.gamePiece, 0, 0, 0, 0],
+      [0, 0, 0, game.gamePiece, 0, 0, 0],
+      [0, 0, 0, 0, game.gamePiece, 0, 0],
+      [0, 0, 0, 0, 0, game.gamePiece, 0]
+     ];
+     
+    game.backwardDiagonalConnectFive(1, 1);
+    assert.equal(game.gameWon, true) 
+  });
+
 });
