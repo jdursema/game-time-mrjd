@@ -60,21 +60,49 @@ describe('Game', () => {
 
   it('should check for four of the same gamePieces in a row horizontally', () => {
     assert.equal(game.gameWon, false);
-    // game.gameArray = [
-    //   [0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, game.gamePiece, game.gamePiece, game.gamePiece, game.gamePiece, 0]
-    //  ]
+    
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, game.gamePiece, game.gamePiece, game.gamePiece, game.gamePiece, 0]
+     ]
 
-    game.gameArray[5][0].player===1;
-    game.gameArray[5][1].player===1;
-    game.gameArray[5][2].player===1;
-    game.gameArray[5][3].player===1;
+    game.horizontalConnectFour(5, 2);
+    assert.equal(game.gameWon, true) 
+  });
 
-    game.horizontalConnectFour(5, 0);
+  it('should check for four of the same gamePieces in a row vertically', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0]
+     ]
+
+    game.verticalConnectFour(2, 0);
+    assert.equal(game.gameWon, true) 
+  });
+
+  it('should check for four of the same gamePieces in a row diagonally up and to the right', () => {
+    assert.equal(game.gameWon, false);
+
+    game.gameArray = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, game.gamePiece, 0, 0, 0],
+      [0, 0, game.gamePiece, 0, 0, 0, 0],
+      [0, game.gamePiece, 0, 0, 0, 0, 0],
+      [game.gamePiece, 0, 0, 0, 0, 0, 0]
+     ];
+     
+    game.forwardDiagonalConnectFour(5, 0);
     assert.equal(game.gameWon, true) 
   });
 });
